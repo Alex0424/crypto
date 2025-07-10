@@ -1,0 +1,287 @@
+/* Custom CSS for Crypto Documentation */
+
+/* Crypto-themed color variables */
+:root {
+  --crypto-gold: #f7931a;
+  --crypto-purple: #663399;
+  --crypto-blue: #1e88e5;
+  --crypto-green: #00c853;
+  --crypto-red: #f44336;
+  --crypto-dark: #1a1a1a;
+}
+
+/* Custom card styling */
+.card {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-left: 4px solid var(--crypto-purple);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Grid layout for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Crypto icons and symbols */
+.crypto-icon {
+  font-size: 1.5em;
+  margin-right: 0.5rem;
+  color: var(--crypto-gold);
+}
+
+/* Price ticker styling */
+.price-ticker {
+  background: linear-gradient(45deg, var(--crypto-purple), var(--crypto-blue));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0.25rem;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* Blockchain visualization */
+.blockchain-block {
+  background: var(--md-code-bg-color);
+  border: 2px solid var(--crypto-purple);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
+  display: inline-block;
+  min-width: 120px;
+  text-align: center;
+  position: relative;
+}
+
+.blockchain-block::after {
+  content: "→";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--crypto-purple);
+  font-size: 1.5em;
+}
+
+.blockchain-block:last-child::after {
+  display: none;
+}
+
+/* Transaction styling */
+.transaction {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-left: 4px solid var(--crypto-green);
+  font-family: var(--md-code-font);
+  font-size: 0.9em;
+}
+
+.transaction.pending {
+  border-left-color: var(--crypto-gold);
+}
+
+.transaction.failed {
+  border-left-color: var(--crypto-red);
+}
+
+/* Wallet address styling */
+.wallet-address {
+  font-family: var(--md-code-font);
+  background: var(--md-code-bg-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  word-break: break-all;
+}
+
+/* Security warning boxes */
+.security-warning {
+  background: linear-gradient(45deg, #ffebee, #ffcdd2);
+  border: 1px solid var(--crypto-red);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.security-tip {
+  background: linear-gradient(45deg, #e8f5e8, #c8e6c9);
+  border: 1px solid var(--crypto-green);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Market data tables */
+.market-data {
+  overflow-x: auto;
+}
+
+.market-data table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.market-data th,
+.market-data td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.market-data th {
+  background: var(--crypto-purple);
+  color: white;
+  font-weight: 600;
+}
+
+/* Price indicators */
+.price-up {
+  color: var(--crypto-green);
+}
+
+.price-down {
+  color: var(--crypto-red);
+}
+
+.price-up::before {
+  content: "↗ ";
+}
+
+.price-down::before {
+  content: "↘ ";
+}
+
+/* Code block enhancements for crypto */
+.highlight .gd {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.highlight .gi {
+  background-color: rgba(0, 200, 83, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .blockchain-block {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  .blockchain-block::after {
+    content: "↓";
+    right: 50%;
+    top: 100%;
+    transform: translateX(50%);
+  }
+}
+
+/* Dark mode specific adjustments */
+[data-md-color-scheme="slate"] {
+  --crypto-gold: #ffb74d;
+  --crypto-purple: #9c27b0;
+  --crypto-blue: #42a5f5;
+}
+
+[data-md-color-scheme="slate"] .card {
+  background: var(--md-code-bg-color);
+  border-left-color: var(--crypto-purple);
+}
+
+[data-md-color-scheme="slate"] .security-warning {
+  background: rgba(244, 67, 54, 0.1);
+  border-color: var(--crypto-red);
+}
+
+[data-md-color-scheme="slate"] .security-tip {
+  background: rgba(0, 200, 83, 0.1);
+  border-color: var(--crypto-green);
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Crypto symbol styling */
+.crypto-symbol {
+  font-weight: bold;
+  color: var(--crypto-gold);
+}
+
+/* Hash styling */
+.hash {
+  font-family: var(--md-code-font);
+  color: var(--crypto-purple);
+  font-size: 0.9em;
+}
+
+/* Interactive elements */
+.interactive-demo {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid var(--crypto-purple);
+}
+
+.demo-button {
+  background: var(--crypto-purple);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.demo-button:hover {
+  background: var(--crypto-blue);
+}
+
+/* Mermaid diagram styling */
+.mermaid {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Custom admonition styling */
+.md-typeset .admonition.bitcoin {
+  border-color: var(--crypto-gold);
+}
+
+.md-typeset .admonition.ethereum {
+  border-color: var(--crypto-blue);
+}
+
+.md-typeset .admonition.defi {
+  border-color: var(--crypto-green);
+}
+
+.md-typeset .admonition.security {
+  border-color: var(--crypto-red);
+}
