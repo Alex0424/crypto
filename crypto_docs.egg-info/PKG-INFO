@@ -1,3 +1,30 @@
+Metadata-Version: 2.4
+Name: crypto-docs
+Version: 0.1.0
+Summary: Cryptocurrency documentation site
+Author-email: Alex <alex@example.com>
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: mkdocs
+Requires-Dist: mkdocs>=1.5.0; extra == "mkdocs"
+Requires-Dist: mkdocs-material>=9.0.0; extra == "mkdocs"
+Requires-Dist: mkdocs-git-revision-date-localized-plugin>=1.2.0; extra == "mkdocs"
+Requires-Dist: mkdocs-awesome-pages-plugin>=2.9.0; extra == "mkdocs"
+Requires-Dist: mkdocs-minify-plugin>=0.7.0; extra == "mkdocs"
+Requires-Dist: mkdocs-redirects>=1.2.0; extra == "mkdocs"
+Requires-Dist: pymdown-extensions>=10.0.0; extra == "mkdocs"
+Requires-Dist: pillow>=9.0.0; extra == "mkdocs"
+Requires-Dist: cairosvg>=2.5.0; extra == "mkdocs"
+
 # Crypto Documentation
 
 A comprehensive cryptocurrency and blockchain documentation site built with MkDocs Material.

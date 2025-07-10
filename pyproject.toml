@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-docs"
+version = "0.1.0"
+description = "Cryptocurrency documentation site"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "Alex", email = "alex@example.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+mkdocs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.0.0",
+    "mkdocs-git-revision-date-localized-plugin>=1.2.0",
+    "mkdocs-awesome-pages-plugin>=2.9.0",
+    "mkdocs-minify-plugin>=0.7.0",
+    "mkdocs-redirects>=1.2.0",
+    "pymdown-extensions>=10.0.0",
+    "pillow>=9.0.0",
+    "cairosvg>=2.5.0",
+]
+
+[tool.setuptools]
+packages = []
